@@ -1,0 +1,13 @@
+\documentclass[a4paper]{article}
+\begin{document}
+We implement a fixed-rate Spinal code [1]. The core idea of the encoder is the sequential application of a hash
+function which has two inputs:a $v$-bit state $v_{i-1}$ and a $k$ bits message $\overline{c}_i$
+. The output of the hash function is a
+new $v$-bits state $s_i$:
+\begin{equation}
+s_i=h(s_{i-1},\overline{c}_i),s_0=0^v
+\end{equation}
+Each State $s_i$ is called a spine and it is used to seed a random number generator (RNG) to generate a sequence of
+$L$ pseudo-random $q$-bit numbers. Finally, the $q$ bits of each pseudo random number are mapped to symbols $x_i$ chosen from a given constellation and sent
+. When Spinal codes have a fixed code rate, it is given by $R=k/(L\cdot q)$
+\end{document}
